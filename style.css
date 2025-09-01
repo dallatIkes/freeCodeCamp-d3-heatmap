@@ -1,0 +1,97 @@
+/* Body */
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Main container */
+#heatmap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Title */
+#heatmap h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+/* SVG  */
+svg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: white;
+    transition: transform 0.3s ease;
+}
+
+svg:hover {
+    transform: scale(1.01);
+}
+
+/* Axes */
+#x-axis path,
+#y-axis path,
+#x-axis line,
+#y-axis line {
+    stroke: #bbb;
+    stroke-width: 1;
+}
+
+#x-axis text,
+#y-axis text {
+    font-size: 12px;
+    fill: #555;
+    font-weight: 500;
+}
+
+/* Cells */
+.cell {
+    stroke: #fff;
+    stroke-width: 0.2;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+/* Tooltip */
+#tooltip {
+    pointer-events: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: white;
+    border: none;
+    padding: 10px 14px;
+    line-height: 1.4;
+    color: #222;
+    transition: opacity 0.2s ease;
+}
+
+/* Legend */
+#legend rect {
+    stroke: #ddd;
+    stroke-width: 0.5;
+}
+
+#legend text {
+    font-size: 12px;
+    fill: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    svg {
+        width: 95% !important;
+        height: auto !important;
+    }
+}
